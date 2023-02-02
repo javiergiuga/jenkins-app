@@ -22,7 +22,7 @@ pipeline {
             steps {
                 echo 'Stage Build'
                 sh 'docker build -t ${APPNAME}/${BUILD_NUMBER} .'
-                sh 'docker tag ${APPNAME}/${BUILD_NUMBER} ${REGISTRY}/${APPNAME}/:${BUILD_NUMBER}'
+                sh 'docker tag ${APPNAME}:${BUILD_NUMBER} ${REGISTRY}/${APPNAME}:${BUILD_NUMBER}'
             }
         }
     stage('Push to Registry') {
