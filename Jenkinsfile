@@ -28,7 +28,7 @@ pipeline {
     stage('Push to Registry') {
             steps {
                 echo 'Stage Push'
-                sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PWS'
+                sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
                 sh 'docker push ${REGISTRY}/${APPNAME}/:${BUILD_NUMBER}'
             }
         }
